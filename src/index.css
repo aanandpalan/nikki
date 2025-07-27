@@ -12,127 +12,246 @@
   .font-dancing {
     font-family: 'Dancing Script', cursive;
   }
-  
+
   .font-pacifico {
     font-family: 'Pacifico', cursive;
   }
-  
+
   .font-poppins {
     font-family: 'Poppins', sans-serif;
   }
-  
+
   .animation-delay-200 {
     animation-delay: 200ms;
   }
-  
+
   .animation-delay-1000 {
     animation-delay: 1000ms;
   }
-  
+
   .animation-delay-1500 {
     animation-delay: 1500ms;
   }
-  
+
   .animation-delay-2000 {
     animation-delay: 2000ms;
   }
 }
 
 @layer components {
+
   /* Heartbeat Animation */
   @keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.05);
+    }
   }
-  
+
   .animate-heartbeat {
     animation: heartbeat 2s ease-in-out infinite;
   }
-  
+
   /* Glow Animation */
   @keyframes glow {
-    0%, 100% { 
+
+    0%,
+    100% {
       text-shadow: 0 0 20px rgba(244, 114, 182, 0.8), 0 0 40px rgba(244, 114, 182, 0.6), 0 0 60px rgba(244, 114, 182, 0.4);
     }
-    50% { 
+
+    50% {
       text-shadow: 0 0 30px rgba(244, 114, 182, 1), 0 0 50px rgba(244, 114, 182, 0.8), 0 0 70px rgba(244, 114, 182, 0.6);
     }
   }
-  
+
   .animate-glow {
     animation: glow 3s ease-in-out infinite;
   }
-  
+
   /* Falling Hearts Animation */
   @keyframes fall {
     0% {
       transform: translateY(-100vh) rotate(0deg);
       opacity: 1;
     }
+
     100% {
       transform: translateY(100vh) rotate(360deg);
       opacity: 0;
     }
   }
-  
+
   .animate-fall {
     animation: fall linear infinite;
   }
-  
+
   /* Fade In Up Animation */
   @keyframes fadeInUp {
     from {
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
+
   .animate-fade-in-up {
     animation: fadeInUp 0.8s ease-out forwards;
   }
-  
+
   /* Scale In Animation */
   @keyframes scaleIn {
     from {
       opacity: 0;
       transform: scale(0.8);
     }
+
     to {
       opacity: 1;
       transform: scale(1);
     }
   }
-  
+
   .animate-scale-in {
     animation: scaleIn 0.8s ease-out forwards;
   }
-  
+
   /* Float Animation */
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
-  
+
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
-  
+
   /* Pulse Glow Animation */
   @keyframes pulseGlow {
-    0%, 100% { 
+
+    0%,
+    100% {
       box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
     }
-    50% { 
+
+    50% {
       box-shadow: 0 0 30px rgba(236, 72, 153, 0.6);
     }
   }
-  
+
   .animate-pulse-glow {
     animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  /* Float Up Animation for Balloons */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(-100vh) rotate(180deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-float-up {
+    animation: floatUp linear infinite;
+  }
+
+  /* Confetti Animation */
+  @keyframes confetti {
+    0% {
+      transform: translateY(-100vh) rotateZ(0deg);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100vh) rotateZ(720deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-confetti {
+    animation: confetti linear infinite;
+  }
+
+  /* Heart Burst Animation */
+  @keyframes heartBurst {
+    0% {
+      transform: scale(0) rotate(0deg);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.2) rotate(180deg);
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: scale(0) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-heart-burst {
+    animation: heartBurst 3s ease-out infinite;
+  }
+
+  /* Enhanced Glow Animation */
+  @keyframes glow {
+
+    0%,
+    100% {
+      text-shadow: 0 0 20px rgba(244, 114, 182, 0.8), 0 0 40px rgba(244, 114, 182, 0.6), 0 0 60px rgba(244, 114, 182, 0.4);
+      transform: scale(1);
+    }
+
+    50% {
+      text-shadow: 0 0 30px rgba(244, 114, 182, 1), 0 0 50px rgba(244, 114, 182, 0.8), 0 0 70px rgba(244, 114, 182, 0.6);
+      transform: scale(1.02);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Mobile Responsive Animations */
+  @media (max-width: 768px) {
+    .animate-float-up {
+      animation-duration: 6s;
+    }
+
+    .animate-confetti {
+      animation-duration: 4s;
+    }
+
+    .animate-heart-burst {
+      animation-duration: 4s;
+    }
   }
 }
 
@@ -164,4 +283,64 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(244, 114, 182, 0.8);
+}
+
+/* Photo Gallery Specific Animations */
+@keyframes photoHover {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.05) rotate(1deg);
+  }
+
+  100% {
+    transform: scale(1.1) rotate(-1deg);
+  }
+}
+
+.photo-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-hover:hover {
+  animation: photoHover 0.6s ease-in-out;
+}
+
+/* Modal Backdrop Blur */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Stagger Animation for Photo Grid */
+.stagger-children>* {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.stagger-children>*:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stagger-children>*:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stagger-children>*:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stagger-children>*:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.stagger-children>*:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.stagger-children>*:nth-child(6) {
+  animation-delay: 0.6s;
 }
